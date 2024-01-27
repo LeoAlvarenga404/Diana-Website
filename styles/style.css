@@ -1,0 +1,497 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Instrument+Serif:ital@1&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Mulish", sans-serif;
+}
+
+.hidden {
+  opacity: 0.1;
+  filter: blur(0.2rem);
+  transition: all 0.5s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 0.5s;
+}
+
+header {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://i.gifer.com/b2K.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+}
+header::after {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, transparent, black 100%);
+  position: absolute;
+  top: 0;
+}
+header::before {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+}
+header nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 12rem;
+  background-color: rgba(3, 3, 3, 0.6);
+  color: #f7f7f7;
+}
+header nav .logo {
+  position: relative;
+  font-family: "Black Ops One", system-ui;
+}
+header nav .logo a {
+  text-decoration: none;
+  color: #f7f7f7;
+}
+header nav .logo h1 {
+  font-size: 2.4rem;
+}
+header nav .logo h1 span {
+  color: #70324a;
+}
+header nav .logo i {
+  position: absolute;
+  font-size: 3rem;
+  left: -2rem;
+  top: 1.2rem;
+  animation: fall 1s normal;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-10rem);
+  }
+}
+header nav .nav-list {
+  position: relative;
+  z-index: 1;
+}
+header nav .nav-list ul {
+  display: flex;
+  gap: 2.4rem;
+  list-style: none;
+}
+header nav .nav-list ul li a {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  color: #DBD5CD;
+  transition: color 0.4s;
+  text-decoration: none;
+}
+header nav .nav-list ul li a:hover {
+  color: #70324a;
+}
+header .header-button {
+  position: relative;
+  z-index: 1;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .header-button .header-title {
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .header-button .header-title h1 {
+  font-size: 8.6rem;
+  color: transparent;
+  letter-spacing: 0.7rem;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  background-image: url("/assets/metal.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: metal 2s ease alternate infinite;
+}
+@keyframes metal {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+header .header-button .header-title h2 {
+  font-size: 5rem;
+  color: #7c1526;
+  letter-spacing: 1rem;
+  font-family: "Instrument Serif", serif;
+  animation: typing 3s normal;
+  white-space: nowrap;
+  overflow: hidden;
+}
+header .header-button .header-title h2::after, header .header-button .header-title h2::before {
+  content: "“";
+  font-size: 6rem;
+  color: #7c1526;
+}
+header .header-button .header-title h2::after {
+  content: "”";
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+header .header-button .header-line {
+  width: 35rem;
+  height: 0.1rem;
+  background: linear-gradient(90deg, transparent, white 50%, transparent);
+}
+header .header-button button {
+  margin-top: 5rem;
+  padding: 2rem 4rem;
+  border: none;
+  box-shadow: 0 0 0.3rem 0.1rem #f7f7f7;
+  border-radius: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+header .header-button button a {
+  text-transform: uppercase;
+  color: #f7f7f7;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  animation: neon 6s ease-in-out infinite;
+}
+header .header-button button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+@keyframes neon {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 1rem rgba(255, 255, 255, 0.8), 0 0 2rem rgba(255, 255, 255, 0.8), 0 0 3rem rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+header .scroll {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 6rem;
+  position: relative;
+  z-index: 1;
+}
+header .scroll a {
+  font-size: 3rem;
+  color: #62445A;
+  animation: scrollAnimation 0.7s infinite;
+  text-decoration: none;
+}
+@keyframes scrollAnimation {
+  0%, 20% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  80%, 100% {
+    transform: translateY(0);
+  }
+}
+
+main {
+  background-image: url("/assets/monte-targon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  position: relative;
+}
+main::after {
+  content: "";
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+}
+
+.history-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-history {
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  margin-top: 10rem;
+  font-size: 1.4rem;
+  max-width: 150rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.main-history .blur {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  background-color: rgba(240, 236, 180, 0.493);
+  border-radius: 50%;
+  filter: blur(10rem);
+  z-index: -1;
+}
+.main-history .blur.primary {
+  right: 20rem;
+  top: 140rem;
+}
+.main-history .blur.second {
+  right: 20rem;
+  top: 25rem;
+}
+.main-history .blur.third {
+  left: 10rem;
+  bottom: 150rem;
+}
+.main-history .main-history-title {
+  margin-block: 10rem;
+  color: #DBD5CD;
+  font-family: "Playfair Display", serif;
+  font-size: 3.6rem;
+}
+.main-history .histories {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  color: rgb(226, 216, 195);
+  padding-inline: 2rem;
+}
+.main-history .histories .history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.main-history .histories .history:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.main-history .histories .history img {
+  width: 100%;
+  max-width: 60rem;
+  min-width: 40rem;
+}
+.main-history .history-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: justify;
+  gap: 1rem;
+  font-weight: 400;
+}
+
+.history-last-text {
+  width: 100%;
+  max-width: 140rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: justify;
+  padding-inline: 2rem;
+  margin-bottom: 15rem;
+}
+.history-last-text p {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.history-last-text img {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.skills-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15rem;
+}
+.skills-container .skill-bg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/assets/1269617.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative;
+  gap: 12rem;
+}
+.skills-container .skill-bg::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.527);
+  position: absolute;
+  top: 0;
+}
+
+.diana-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  z-index: 1;
+}
+.diana-title h1 {
+  font-size: 15rem;
+  font-family: "Playfair Display", serif;
+  color: rgba(248, 246, 235, 0.6862745098);
+}
+.diana-title .targon {
+  display: flex;
+  align-items: center;
+  margin-top: -3rem;
+  margin-left: 3rem;
+}
+.diana-title .targon h3 {
+  font-size: 4rem;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.8rem;
+  color: #8c8f62;
+}
+.diana-title .targon img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.wrapper-skills {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  gap: 4rem;
+  padding-bottom: 6rem;
+}
+.wrapper-skills .skills-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.wrapper-skills .skills-1 span {
+  max-width: 50rem;
+}
+
+.skills {
+  width: 100%;
+  padding: 2rem;
+  padding-bottom: 10rem;
+  position: relative;
+  z-index: 1;
+  padding-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills .skill-title {
+  font-size: 3rem;
+  font-family: "Roboto", serif;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills .skill-title h1 {
+  background: linear-gradient(180deg, rgb(231, 230, 230), rgb(81, 79, 148));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.skills .abilities {
+  display: flex;
+  gap: 2.4rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+.skills .abilities img {
+  width: 100%;
+  height: 100%;
+  max-width: 7rem;
+  max-height: 7rem;
+  min-width: 4rem;
+  min-height: 4rem;
+}
+.skills .abilities .ability {
+  border: 0.1rem outset rgb(156, 156, 86);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.skills .abilities .ability:hover {
+  transform: translateY(-1rem);
+}
+.skills .abilities .ability p {
+  position: absolute;
+  color: white;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  font-size: 1rem;
+}
+.skills h2 {
+  color: #DBD5CD;
+  font-size: 1.7rem;
+  margin-block: 2rem;
+}
+.skills span {
+  color: #DBD5CD;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+video {
+  width: 100%;
+  max-width: 60rem;
+  position: relative;
+  border-radius: 2rem;
+}/*# sourceMappingURL=style.css.map */
